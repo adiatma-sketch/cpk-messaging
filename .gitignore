@@ -1,0 +1,13 @@
+# Upload pengguna jangan masuk repo
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# OS / editor
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Lokal
+*.log
+.env
