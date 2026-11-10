@@ -7,7 +7,7 @@ Claude (Anthropic)
 (diisi di akhir proyek)
 
 ## Prompt kunci
-1. "bisa bantu aku mengerjakan cpk praktikum pemrograman berbasis web... kasih step by step-nya biar berurutan"
+1. "bantuan pengerjakan cpk praktikum pemrograman berbasis web"
 2. (tambahkan prompt penting berikutnya di sini)
 
 ## Evaluasi kode hasil AI
