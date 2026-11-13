@@ -10,6 +10,7 @@ require_once __DIR__ . '/../lib/php-jwt/Key.php';
 require_once __DIR__ . '/../lib/php-jwt/JWT.php';
 
 use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 function createToken(string $userId): string
 {
@@ -21,4 +22,14 @@ function createToken(string $userId): string
         'sub' => $userId,
     ];
     return JWT::encode($payload, JWT_SECRET, JWT_ALGO);
+}
+
+function verifyToken(string $token): ?string
+{
+    try {
+        $decoded = JWT::decode($token, new Key(JWT_SECRET, JWT_ALGO));
+        return (string)$decoded->sub;
+    } catch (\Throwable $e) {
+        return null;
+    }
 }
