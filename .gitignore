@@ -11,3 +11,5 @@ Thumbs.db
 # Lokal
 *.log
 .env
+
+backend/config/jwt.php
