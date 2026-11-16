@@ -6,4 +6,4 @@
 | 11 Nov 2026 | Buat schema.sql, import ke MariaDB, koneksi PDO, endpoint ping, helper response dan generator ID | 1 setengah jam |
 | 12 Nov 2026 | Endpoint register (validasi, hash password), tes di RapidAPI | setengah jam |
 | 13 Nov 2026 | Login dengan JWT, verifikasi token, hapus akun, tes skenario gagal, debug header Authorization | 2 jam |
-| 16 Nov 2026 | Endpoint kontak (CRUD), endpoint pesan, upload foto profil (validasi gambar), frontend (login, kontak, chat dengan polling), tes dua akun, dokumen arsitektur dan laporan AI | 3 jam (isi sesuai waktu nyata) |
+| 16 Nov 2026 | Endpoint kontak (CRUD), endpoint pesan, upload foto profil (validasi gambar), frontend (login, kontak, chat dengan polling), tes dua akun, dokumen arsitektur dan laporan AI | 3 jam |
