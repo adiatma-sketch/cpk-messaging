@@ -15,7 +15,9 @@ function clearSession() {
 }
 
 async function api(endpoint, { method = 'GET', body = null, auth = true } = {}) {
-  const headers = { 'Content-Type': 'application/json' };
+  const isForm = body instanceof FormData;
+  const headers = {};
+  if (!isForm) headers['Content-Type'] = 'application/json';
   if (auth && getToken()) {
     headers['Authorization'] = 'Bearer ' + getToken();
   }
@@ -23,7 +25,7 @@ async function api(endpoint, { method = 'GET', body = null, auth = true } = {}) 
   const response = await fetch(`${API_BASE}/${endpoint}`, {
     method,
     headers,
-    body: body ? JSON.stringify(body) : null,
+    body: body ? (isForm ? body : JSON.stringify(body)) : null,
   });
 
   let data = {};
@@ -40,3 +42,5 @@ async function api(endpoint, { method = 'GET', body = null, auth = true } = {}) 
 
   return { ok: response.ok, status: response.status, data };
 }
+
+const UPLOAD_BASE = 'http://localhost/cpk-messaging/backend/uploads';
