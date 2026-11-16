@@ -36,3 +36,19 @@ button {
 .message { text-align: center; min-height: 1.2em; }
 .message.error { color: #c0392b; }
 .message.success { color: #1e8449; }
+.card.wide { max-width: 560px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; }
+.topbar h1 { margin: 0; }
+button.small { width: auto; padding: 6px 12px; margin-left: 4px; }
+button.secondary { background: #7f8c8d; }
+button.danger { background: #c0392b; }
+#contact-form button { margin-bottom: 8px; }
+.list { list-style: none; padding: 0; }
+.list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+.list .empty { justify-content: center; color: #888; }

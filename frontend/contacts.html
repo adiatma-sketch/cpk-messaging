@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan - Kontak</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="card wide">
+    <header class="topbar">
+      <h1>Kontak</h1>
+      <div>
+        <button id="btn-delete-account" class="danger small">Hapus Akun</button>
+        <button id="btn-logout" class="small">Keluar</button>
+      </div>
+    </header>
+    <p id="welcome"></p>
+
+    <form id="contact-form">
+      <input type="hidden" id="contact-id">
+      <input type="text" id="contact-name" placeholder="Nama kontak" required>
+      <input type="text" id="contact-phone" placeholder="Nomor HP" required>
+      <button type="submit" id="btn-save">Tambah Kontak</button>
+      <button type="button" id="btn-cancel" class="secondary" hidden>Batal</button>
+    </form>
+
+    <p id="message" class="message"></p>
+    <ul id="contact-list" class="list"></ul>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/contacts.js"></script>
+</body>
+</html>
