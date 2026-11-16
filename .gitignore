@@ -13,3 +13,5 @@ Thumbs.db
 .env
 
 backend/config/jwt.php
+
+!backend/uploads/.htaccess
