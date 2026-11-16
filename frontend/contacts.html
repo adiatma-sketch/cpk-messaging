@@ -17,7 +17,13 @@
     </header>
     <p id="welcome"></p>
 
-    <form id="contact-form">
+    <div class="profile">
+      <img id="profile-photo" class="avatar" alt="Foto profil" hidden>
+      <input type="file" id="photo-input" accept="image/jpeg,image/png,image/webp">
+      <button type="button" id="btn-upload" class="small">Unggah Foto</button>
+    </div>
+
+    <form id="contact-form" autocomplete="off">
       <input type="hidden" id="contact-id">
       <input type="text" id="contact-name" placeholder="Nama kontak" required>
       <input type="text" id="contact-phone" placeholder="Nomor HP" required>

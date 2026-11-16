@@ -11,6 +11,7 @@ const saveBtn = document.getElementById('btn-save');
 const cancelBtn = document.getElementById('btn-cancel');
 const listEl = document.getElementById('contact-list');
 const messageEl = document.getElementById('message');
+const photoImg = document.getElementById('profile-photo');
 
 document.getElementById('welcome').textContent = 'Masuk sebagai ' + (user.name || '');
 
@@ -48,6 +49,16 @@ async function loadContacts() {
     info.append(strong, document.createElement('br'), small);
 
     const actions = document.createElement('div');
+
+    const chatBtn = document.createElement('button');
+    chatBtn.textContent = 'Chat';
+    chatBtn.className = 'small';
+    chatBtn.onclick = () => {
+      window.location.href =
+        'chat.html?with=' + encodeURIComponent(c.user_id) +
+        '&name=' + encodeURIComponent(c.alias_name);
+    };
+
     const editBtn = document.createElement('button');
     editBtn.textContent = 'Ubah';
     editBtn.className = 'small secondary';
@@ -58,12 +69,13 @@ async function loadContacts() {
       saveBtn.textContent = 'Simpan Perubahan';
       cancelBtn.hidden = false;
     };
+
     const delBtn = document.createElement('button');
     delBtn.textContent = 'Hapus';
     delBtn.className = 'small danger';
     delBtn.onclick = () => deleteContact(c.id);
-    actions.append(editBtn, delBtn);
 
+    actions.append(chatBtn, editBtn, delBtn);
     li.append(info, actions);
     listEl.appendChild(li);
   });
@@ -111,6 +123,30 @@ document.getElementById('btn-delete-account').onclick = async () => {
     window.location.href = 'index.html';
   } else {
     showMessage(res.data.message);
+  }
+};
+
+// Foto profil
+if (user.photo) {
+  photoImg.src = UPLOAD_BASE + '/' + user.photo;
+  photoImg.hidden = false;
+}
+
+document.getElementById('btn-upload').onclick = async () => {
+  const file = document.getElementById('photo-input').files[0];
+  if (!file) {
+    showMessage('Pilih file gambar dulu');
+    return;
+  }
+  const fd = new FormData();
+  fd.append('photo', file);
+  const res = await api('photo.php', { method: 'POST', body: fd });
+  showMessage(res.data.message, !res.ok);
+  if (res.ok) {
+    user.photo = res.data.data.photo;
+    localStorage.setItem('user', JSON.stringify(user));
+    photoImg.src = UPLOAD_BASE + '/' + user.photo + '?t=' + Date.now();
+    photoImg.hidden = false;
   }
 };
 
