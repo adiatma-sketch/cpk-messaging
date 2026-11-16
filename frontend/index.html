@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan - Masuk</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Aplikasi Pesan</h1>
+
+    <form id="login-form">
+      <h2>Masuk</h2>
+      <input type="text" id="login-phone" placeholder="Nomor HP" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <button type="submit">Masuk</button>
+      <p class="link" id="to-register">Belum punya akun? Daftar</p>
+    </form>
+
+    <form id="register-form" hidden>
+      <h2>Daftar</h2>
+      <input type="text" id="reg-name" placeholder="Nama" required>
+      <input type="text" id="reg-phone" placeholder="Nomor HP" required>
+      <input type="password" id="reg-password" placeholder="Password (min. 6 karakter)" required>
+      <button type="submit">Daftar</button>
+      <p class="link" id="to-login">Sudah punya akun? Masuk</p>
+    </form>
+
+    <p id="message" class="message"></p>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
