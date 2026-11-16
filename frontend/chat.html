@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pesan - Chat</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="card wide">
+    <header class="topbar">
+      <h1 id="chat-title">Chat</h1>
+      <a href="contacts.html"><button class="small secondary">Kembali</button></a>
+    </header>
+
+    <div id="messages" class="messages"></div>
+    <p id="message" class="message"></p>
+
+    <form id="send-form" class="send-form">
+      <input type="text" id="body" placeholder="Tulis pesan..." maxlength="2000" autocomplete="off" required>
+      <button type="submit" class="small">Kirim</button>
+    </form>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>
